@@ -20,21 +20,21 @@ export class AuthSrevice {
         return userAccount;
       }
     } catch (error) {
-      console.log("Appwrite serive :: logout :: error", error);
+      console.log("Appwrite serive :: createAccount :: error", error);
     }
   }
   async login({ email, password }) {
     try {
       return await this.account.createEmailSession(email, password);
     } catch (error) {
-      console.log("Appwrite serive :: logout :: error", error);
+      console.log("Appwrite serive :: login :: error", error);
     }
   }
   async getCurrentUser() {
     try {
       return await this.account.get();
     } catch (error) {
-      console.log("Appwrite serive :: logout :: error", error);
+      console.log("Appwrite serive :: getCurrentUser :: error", error);
     }
 
     return null;
